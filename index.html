@@ -1,154 +1,180 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Browser.js : browser.js - Lightweight Browser &amp; OS detection library (3kb)" />
+<head>
+    <meta charset='utf-8'/>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+    <meta name="description" content="Browser.js : browser.js - Lightweight Browser &amp; OS detection library (3kb)"/>
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
     <title>Browser.js</title>
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/phpdude/browser.js">View on GitHub</a>
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+    <header class="inner">
+        <a id="forkme_banner" href="https://github.com/phpdude/browser.js">View on GitHub</a>
 
-          <h1 id="project_title">Browser.js</h1>
-          <h2 id="project_tagline">browser.js - Lightweight Browser &amp; OS detection library (3kb)</h2>
+        <h1 id="project_title">Browser.js</h1>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/phpdude/browser.js/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/phpdude/browser.js/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+        <h2 id="project_tagline">browser.js - Lightweight Browser &amp; OS detection library (3kb)</h2>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+        <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/phpdude/browser.js/zipball/master">Download this
+                project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/phpdude/browser.js/tarball/master">Download this
+                project as a tar.gz file</a>
+        </section>
+    </header>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+    <section id="main_content" class="inner">
         <h1>
-<a name="browserjs-v010" class="anchor" href="#browserjs-v010"><span class="octicon octicon-link"></span></a>
-<a href="https://github.com/phpdude/browser.js/">browser.js</a> v0.1.0</h1>
+            <a name="browserjs-v010" class="anchor" href="#browserjs-v010"><span
+                    class="octicon octicon-link"></span></a>
+            <a href="https://github.com/phpdude/browser.js/">browser.js</a> v0.1.0</h1>
 
-<p>browser.js makes it easy to write conditional CSS based on device operating system and web browser.</p>
+        <p>browser.js makes it easy to write conditional CSS based on device operating system and web browser.</p>
 
-<h3>
-<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h3>
+        <h3>
+            <a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples
+        </h3>
 
-<p>browser.js inserts css classes into <code>&lt;html&gt;</code> element.</p>
+        <p>browser.js inserts css classes into <code>&lt;html&gt;</code> element.</p>
 
-<h3>
-<a name="mac-os--firefox" class="anchor" href="#mac-os--firefox"><span class="octicon octicon-link"></span></a>Mac OS &amp; Firefox</h3>
+        <h3>
+            <a name="mac-os--firefox" class="anchor" href="#mac-os--firefox"><span class="octicon octicon-link"></span></a>Mac
+            OS &amp; Firefox</h3>
 
-<p><img src="http://monosnap.com/image/gemZWZwr33a1TaHLcgbFMcLsIL4H0e.png"></p>
+        <p><img src="screenshots/mac%20os%20firefox.png"></p>
 
-<h3>
-<a name="ipad-emulator--safari" class="anchor" href="#ipad-emulator--safari"><span class="octicon octicon-link"></span></a>iPad Emulator &amp; Safari</h3>
+        <h3>
+            <a name="ipad-emulator--safari" class="anchor" href="#ipad-emulator--safari"><span
+                    class="octicon octicon-link"></span></a>iPad Emulator &amp; Safari</h3>
 
-<p><img src="http://monosnap.com/image/PvXE714cBpeDtxyJKFColH3vD5vfRc.png"></p>
+        <p><img src="screenshots/ipad.png"></p>
 
-<h3>
-<a name="mac-os--google-chrome" class="anchor" href="#mac-os--google-chrome"><span class="octicon octicon-link"></span></a>Mac OS &amp; Google Chrome</h3>
+        <h3>
+            <a name="mac-os--google-chrome" class="anchor" href="#mac-os--google-chrome"><span
+                    class="octicon octicon-link"></span></a>Mac OS &amp; Google Chrome</h3>
 
-<p><img src="http://monosnap.com/image/DtjprQIZM8cosBNdwJpBuPJn4LL7oK.png"></p>
+        <p><img src="screenshots/mac%20os%20chrome.png"></p>
 
-<h2>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+        <h2>
+            <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>Just include the script. The script then updates the <code>&lt;html&gt;</code> section with the appropriate classes based on os &amp; browser names detected by <a href="https://github.com/bestiejs/platform.js">platform.js</a>.</p>
+        <p>Just include the script. The script then updates the <code>&lt;html&gt;</code> section with the appropriate
+            classes based on os &amp; browser names detected by <a href="https://github.com/bestiejs/platform.js">platform.js</a>.
+        </p>
 
-<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"lib/browser.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
+        <div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span
+                class="s">"lib/browser.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre>
+        </div>
 
-<h3>
-<a name="embeded-class-names" class="anchor" href="#embeded-class-names"><span class="octicon octicon-link"></span></a>Embeded class names</h3>
+        <h3>
+            <a name="embeded-class-names" class="anchor" href="#embeded-class-names"><span
+                    class="octicon octicon-link"></span></a>Embeded class names</h3>
 
-<p>browser.js add classes to <code>&lt;html&gt;</code> element by masks</p>
+        <p>browser.js add classes to <code>&lt;html&gt;</code> element by masks</p>
 
 <pre><code>ua-#{ua}
-os-#{os}
-#{os}-#{ua}
-ua-#{ua}#{version} (Major version number)
+    os-#{os}
+    #{os}-#{ua}
+    ua-#{ua}#{version} (Major version number)
 </code></pre>
 
-<p>Example for Mac OS &amp; firefox</p>
+        <p>Example for Mac OS &amp; firefox</p>
 
 <pre><code>ua-firefox
-os-mac
-mac-firefox
-ua-firefox29
+    os-mac
+    mac-firefox
+    ua-firefox29
 </code></pre>
 
-<h3>
-<a name="support-no-jsnojs-html-classes" class="anchor" href="#support-no-jsnojs-html-classes"><span class="octicon octicon-link"></span></a>Support no-js/nojs <code>&lt;html&gt;</code> classes.</h3>
+        <h3>
+            <a name="support-no-jsnojs-html-classes" class="anchor" href="#support-no-jsnojs-html-classes"><span
+                    class="octicon octicon-link"></span></a>Support no-js/nojs <code>&lt;html&gt;</code> classes.</h3>
 
-<p>browser.js will remove no-js or nojs classes from <code>&lt;html&gt;</code> element.</p>
+        <p>browser.js will remove no-js or nojs classes from <code>&lt;html&gt;</code> element.</p>
 
-<h3>
-<a name="utilities" class="anchor" href="#utilities"><span class="octicon octicon-link"></span></a>Utilities</h3>
+        <h3>
+            <a name="utilities" class="anchor" href="#utilities"><span class="octicon octicon-link"></span></a>Utilities
+        </h3>
 
-<h4>
-<a name="browsernoconflict" class="anchor" href="#browsernoconflict"><span class="octicon octicon-link"></span></a>browser.noConflict()</h4>
+        <h4>
+            <a name="browsernoconflict" class="anchor" href="#browsernoconflict"><span
+                    class="octicon octicon-link"></span></a>browser.noConflict()</h4>
 
-<p>Run browser.js in noConflict mode, returning the browser variable to its previous owner.
-Returns a reference to the browser object.</p>
+        <p>Run browser.js in noConflict mode, returning the browser variable to its previous owner.
+            Returns a reference to the browser object.</p>
 
-<h4>
-<a name="browserjs-javascript-methods" class="anchor" href="#browserjs-javascript-methods"><span class="octicon octicon-link"></span></a>browser.js JavaScript methods</h4>
+        <h4>
+            <a name="browserjs-javascript-methods" class="anchor" href="#browserjs-javascript-methods"><span
+                    class="octicon octicon-link"></span></a>browser.js JavaScript methods</h4>
 
-<p>You can get browser detected classes by javascript api.</p>
+        <p>You can get browser detected classes by javascript api.</p>
 
-<div class="highlight highlight-html"><pre><span class="nt">&lt;script&gt;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">browser</span><span class="p">.</span><span class="nx">classes</span><span class="p">());</span>
+        <div class="highlight highlight-html"><pre><span class="nt">&lt;script&gt;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span
+                    class="nx">browser</span><span class="p">.</span><span class="nx">classes</span><span
+                    class="p">());</span>
 <span class="nt">&lt;/script&gt;</span>
-</pre></div>
+</pre>
+        </div>
 
-<p>browser.js doesn't remove any extra classes added in <code>&lt;html&gt;</code> section.</p>
+        <p>browser.js doesn't remove any extra classes added in <code>&lt;html&gt;</code> section.</p>
 
-<h3>
-<a name="usage-1" class="anchor" href="#usage-1"><span class="octicon octicon-link"></span></a>Usage</h3>
+        <h3>
+            <a name="usage-1" class="anchor" href="#usage-1"><span class="octicon octicon-link"></span></a>Usage</h3>
 
-<p>In your CSS you can use added browser.js classes for making elegant hacks for selected browsers. For example you can make hacks for all IE and IE6.</p>
+        <p>In your CSS you can use added browser.js classes for making elegant hacks for selected browsers. For example
+            you can make hacks for all IE and IE6.</p>
 
-<div class="highlight highlight-css"><pre><span class="nc">.ua-ie</span> <span class="nc">.adv</span> <span class="p">{</span>
+        <div class="highlight highlight-css"><pre><span class="nc">.ua-ie</span> <span class="nc">.adv</span> <span
+                class="p">{</span>
     <span class="k">margin-top</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nc">.ua-ie6</span> <span class="nc">.adv</span> <span class="p">{</span>
     <span class="k">margin-top</span><span class="o">:</span> <span class="m">17px</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</pre>
+        </div>
 
-<h3>
-<a name="contributor" class="anchor" href="#contributor"><span class="octicon octicon-link"></span></a>Contributor</h3>
+        <h3>
+            <a name="contributor" class="anchor" href="#contributor"><span class="octicon octicon-link"></span></a>Contributor
+        </h3>
 
-<p>Alexandr Shurigin (aka <a href="https://github.com/phpdude/">phpdude</a>)</p>
+        <p>Alexandr Shurigin (aka <a href="https://github.com/phpdude/">phpdude</a>)</p>
 
-<h3>
-<a name="thanks-to" class="anchor" href="#thanks-to"><span class="octicon octicon-link"></span></a>Thanks to</h3>
+        <h3>
+            <a name="thanks-to" class="anchor" href="#thanks-to"><span class="octicon octicon-link"></span></a>Thanks to
+        </h3>
 
-<h5>
-<a name="platformjs" class="anchor" href="#platformjs"><span class="octicon octicon-link"></span></a><a href="https://github.com/bestiejs/platform.js">platform.js</a>
-</h5>
+        <h5>
+            <a name="platformjs" class="anchor" href="#platformjs"><span class="octicon octicon-link"></span></a><a
+                href="https://github.com/bestiejs/platform.js">platform.js</a>
+        </h5>
 
-<p>platform.js used for browsers &amp; OS detection capabilities.</p>
-      </section>
-    </div>
+        <p>platform.js used for browsers &amp; OS detection capabilities.</p>
+    </section>
+</div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+    <footer class="inner">
         <p class="copyright">Browser.js maintained by <a href="https://github.com/phpdude">phpdude</a></p>
+
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+    </footer>
+</div>
 
-    
 
-  </body>
+</body>
 </html>

@@ -8,15 +8,15 @@ browser.js inserts css classes into `<html>` element.
 
 ### Mac OS & Firefox
 
-<img src="http://monosnap.com/image/gemZWZwr33a1TaHLcgbFMcLsIL4H0e.png" />
+<img src="http://phpdude.github.io/browser.js/screenshots/mac%20os%20firefox.png" />
 
 ### iPad Emulator & Safari
 
-<img src="http://monosnap.com/image/PvXE714cBpeDtxyJKFColH3vD5vfRc.png" />
+<img src="http://phpdude.github.io/browser.js/screenshots/ipad.png" />
 
 ### Mac OS & Google Chrome
 
-<img src="http://monosnap.com/image/DtjprQIZM8cosBNdwJpBuPJn4LL7oK.png" />
+<img src="http://phpdude.github.io/browser.js/screenshots/mac%20os%20chrome.png" />
 
 ## Usage
 

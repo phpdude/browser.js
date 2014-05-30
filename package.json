@@ -1,18 +1,18 @@
 {
     "name": "browser.js",
-    "version": "0.0.20",
-    "homepage": "https://github.com/matthewhudson/device.js",
-    "description": "Description",
+    "version": "0.1.0",
+    "homepage": "https://github.com/phpdude/browser.js",
+    "description": "Browser & OS detection library. browser.js makes it easy to write conditional CSS based on device operating system and web browser<",
     "author": {
         "name": "Alexandr Shurigin",
         "email": "alexandr.shurigin@gmail.com"
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/matthewhudson/device.js.git"
+        "url": "https://github.com/phpdude/browser.js.git"
     },
     "bugs": {
-        "url": "https://github.com/matthewhudson/device.js/issues"
+        "url": "https://github.com/phpdude/browser.js/issues"
     },
     "devDependencies": {
         "grunt": "latest",
@@ -21,9 +21,7 @@
         "grunt-contrib-watch": "~0.5.1",
         "grunt-contrib-uglify": "~0.2.2",
         "grunt-curl": "latest",
-        "grunt-contrib-requirejs": "latest",
-        "grunt-contrib-clean": "latest",
-        "grunt-contrib-copy": "latest"
+        "grunt-contrib-clean": "latest"
     },
     "license": "MIT"
 }

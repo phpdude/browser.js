@@ -2,53 +2,39 @@ module.exports = (grunt) ->
   grunt.initConfig
     pkg: grunt.file.readJSON('package.json')
 
-    copy:
-      browser:
-        src: 'build/browser.js'
-        dest: 'lib/browser.min.js'
-        nonull: true
-      example:
-        src: 'build/browser.js'
-        dest: 'examples/example.js'
-        nonull: true
-
     clean:
-      build: [
-        "build/"
-      ]
       lib: [
-        "lib/vendor/*", "!lib/vendor/.*"
+        "lib/vendor/*", "!lib/vendor/.*", "lib/browser*"
       ]
       example: [
-        "examples/example.js"
+        "examples/example.*"
       ]
 
-    requirejs:
-      compile:
+    uglify:
+      browser:
         options:
-          appDir: "lib/"
-          dir: "build/"
-          baseUrl: "."
-          optimize: "uglify"
-          logLevel: 0
-          findNestedDependencies: true
-          fileExclusionRegExp: /^\./
-          inlineText: true
-          modules: [
-            {
-              name: "browser",
-            },
-            {
-              name: "example",
-            }
-          ],
-          paths:
-            platform: "vendor/platform"
+          preserveComments: false
+          report: 'gzip'
+          banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+
+        files:
+          "lib/browser.min.js": [
+            "lib/vendor/platform.js",
+            "lib/browser.js",
+          ]
+      example:
+        options:
+          preserveComments: false
+          banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+
+        files:
+          "examples/example.min.js": [
+            "lib/browser.min.js",
+            "examples/example.js",
+          ]
 
     curl:
       "lib/vendor/platform.js": "https://raw.githubusercontent.com/bestiejs/platform.js/master/platform.js"
-      "lib/vendor/jquery.js": "http://code.jquery.com/jquery-2.1.1.min.js"
-      "lib/require.js": "https://raw.githubusercontent.com/jrburke/requirejs/2.1.10/require.js"
 
     coffee:
       compile:
@@ -59,7 +45,7 @@ module.exports = (grunt) ->
           'lib/browser.js': [
             'src/browser.coffee'
           ]
-          'lib/example.js': [
+          'examples/example.js': [
             'src/example.coffee'
           ]
 
@@ -71,19 +57,17 @@ module.exports = (grunt) ->
           'src/browser.coffee',
           'src/example.coffee'
         ]
-        tasks: ['coffee']
+        tasks: ['build']
 
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-bumpup'
   grunt.loadNpmTasks 'grunt-curl'
-  grunt.loadNpmTasks 'grunt-contrib-requirejs'
   grunt.loadNpmTasks 'grunt-contrib-clean'
-  grunt.loadNpmTasks 'grunt-contrib-copy'
 
   grunt.registerTask 'default', ['watch']
-  grunt.registerTask 'build', ['coffee', 'requirejs', 'copy']
+  grunt.registerTask 'build', ['coffee', 'uglify']
   grunt.registerTask 'release', ['clean', 'curl', 'bump', 'build']
 
   grunt.registerTask 'bump', (type) ->

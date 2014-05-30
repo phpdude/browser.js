@@ -1,49 +1,72 @@
-define ['vendor/platform'], (platform)->
-  _doc_element = window.document.documentElement
+# Save the previous value of browser variable
+previousBrowser = window.browser
 
-  # Check if docElement already has a given class.
-  _hasClass = (class_name) ->
-    regex = new RegExp class_name, 'i'
-    _doc_element.className.match regex
+# Get platform instance
+platform = window.platform
 
-  # Normalize and set class name attribute for html tag
-  _setClass = (class_name) ->
+# Add browser as global object
+window.browser = {}
+
+# The <html> element
+_doc_element = window.document.documentElement
+
+# Main functions
+# --------------
+
+browser.classes = ->
+  ua = platform.name.toLowerCase()
+
+  # Renaming some OS names
+  osmap = {
+    'os x': 'mac'
+  }
+
+  os = platform.os.family.toLowerCase()
+  os = osmap[os] || os.split(' ')[0]
+
+  [
+    "ua-#{ua}",
+    "os-#{os}",
+    "#{os}-#{ua}",
+    "ua-#{ua}#{parseInt(platform.version)}"
+  ]
+browser.noConflict = ->
+  window.browser = previousBrowser
+  @
+
+# Private utilities
+# -----------------
+
+# Check if docElement already has a given class.
+_hasClass = (class_name) ->
+  regex = new RegExp class_name, 'i'
+  _doc_element.className.match regex
+
+# Normalize and set class name attribute for html tag
+_setClass = (class_names...) ->
+  for class_name in class_names
     _doc_element.className = ((class_name || "").replace /\s+/, " ").trim()
 
-  # Add one or more CSS classes to the <html> element.
-  _addClass = (class_name) ->
+# Add one or more CSS classes to the <html> element.
+_addClass = (class_names...) ->
+  for class_name in class_names
     if not _hasClass class_name
       _setClass _doc_element.className + " " + class_name
 
-  # Remove single CSS class from the <html> element.
-  _removeClass = (class_name) ->
+# Remove single CSS class from the <html> element.
+_removeClass = (class_names...) ->
+  for class_name in class_names
     if _hasClass class_name
       _setClass _doc_element.className.replace class_name, ""
 
-  # Removing default classes
-  _removeClass 'no-js'
-  _removeClass 'nojs'
 
-  class Browser
-  Browser.classes = ->
-    ua = platform.name.toLowerCase()
+# Initialization
+# --------------
 
-    # Renaming some OS names
-    osmap = {
-      'os x': 'mac'
-    }
+# Removing default nojs classes
+_removeClass 'no-js', 'nojs'
 
-    os = platform.os.family.toLowerCase()
-    os = osmap[os] || os.split(' ')[0]
+# Adding current browser classes
+_addClass cls for cls in browser.classes()
 
-    [
-      "ua-#{ua}",
-      "os-#{os}",
-      "#{os}-#{ua}",
-      "ua-#{platform.name.toLowerCase()}#{parseInt(platform.version)}"
-    ]
-
-  for c in Browser.classes()
-    _addClass c
-
-  return Browser
+window.browser = browser

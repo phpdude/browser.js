@@ -1,3 +1,8 @@
+# Syntax sugar
+String::strip = -> if String::trim? then @trim() else @replace /^\s+|\s+$/g, ""
+String::lstrip = -> @replace /^\s+/g, ""
+String::rstrip = -> @replace /\s+$/g, ""
+
 # Save the previous value of browser variable
 previousBrowser = window.browser
 
@@ -45,7 +50,7 @@ _hasClass = (class_name) ->
 # Normalize and set class name attribute for html tag
 _setClass = (class_names...) ->
   for class_name in class_names
-    _doc_element.className = ((class_name || "").replace /\s+/, " ").trim()
+    _doc_element.className = ((class_name || "").replace /\s+/, " ").strip()
 
 # Add one or more CSS classes to the <html> element.
 _addClass = (class_names...) ->

@@ -1,4 +1,4 @@
-# [browser.js](https://github.com/phpdude/browser.js/) v0.1.0
+# [browser.js](https://github.com/phpdude/browser.js/) v0.1.1
 
 browser.js makes it easy to write conditional CSS based on device operating system and web browser.
 

@@ -1,6 +1,6 @@
 {
     "name": "browser.js",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "homepage": "https://github.com/phpdude/browser.js",
     "description": "Browser & OS detection library. browser.js makes it easy to write conditional CSS based on device operating system and web browser<",
     "author": {

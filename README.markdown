@@ -2,6 +2,10 @@
 
 browser.js makes it easy to write conditional CSS based on device operating system and web browser.
 
+### Online demo
+
+You can go to online [demo](http://phpdude.github.io/browser.js/demo/).
+
 ### Examples
 
 browser.js inserts css classes into `<html>` element.

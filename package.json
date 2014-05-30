@@ -1,0 +1,29 @@
+{
+    "name": "browser.js",
+    "version": "0.0.20",
+    "homepage": "https://github.com/matthewhudson/device.js",
+    "description": "Description",
+    "author": {
+        "name": "Alexandr Shurigin",
+        "email": "alexandr.shurigin@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/matthewhudson/device.js.git"
+    },
+    "bugs": {
+        "url": "https://github.com/matthewhudson/device.js/issues"
+    },
+    "devDependencies": {
+        "grunt": "latest",
+        "grunt-contrib-coffee": "~0.7.0",
+        "grunt-bumpup": "~0.2.0",
+        "grunt-contrib-watch": "~0.5.1",
+        "grunt-contrib-uglify": "~0.2.2",
+        "grunt-curl": "latest",
+        "grunt-contrib-requirejs": "latest",
+        "grunt-contrib-clean": "latest",
+        "grunt-contrib-copy": "latest"
+    },
+    "license": "MIT"
+}

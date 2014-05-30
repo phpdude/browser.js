@@ -23,7 +23,7 @@ browser.js inserts css classes into `<html>` element.
 Just include the script. The script then updates the `<html>` section with the appropriate classes based on os & browser names detected by [platform.js](https://github.com/bestiejs/platform.js).
 
 ``` html
-<script src="browser.min.js"></script>
+<script src="lib/browser.min.js"></script>
 ```
 
 ### Embeded class names
